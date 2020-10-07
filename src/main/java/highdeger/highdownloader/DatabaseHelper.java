@@ -37,7 +37,7 @@ public class DatabaseHelper {
         }
 
         try {
-            Statement statement = connection.createStatement();
+            statement = connection.createStatement();
             statement.execute(queryTableDownloads);
             statement.execute(queryTableQueues);
         } catch (SQLException e) {
@@ -75,7 +75,7 @@ public class DatabaseHelper {
      * @throws RuntimeException, if can't "read from db" or "run the query"
      */
     public ArrayList<HighDownload> findAllDownloadsByUrl(String url) throws RuntimeException {
-        String q = String.format("select * from downloads where url like %s%%;", HighUtil.bareUrl(url));
+        String q = String.format("select * from downloads where url like '%s%%';", HighUtil.bareUrl(url));
         ResultSet r = runQuery(q, "Can't run query on db (all_downloads_by_url)");
         return allHighDownloads(r, "Can't read db (all_downloads_by_url)");
     }

@@ -33,6 +33,9 @@ public class WindowNewDownload extends JFrame {
 
             }
         });
+
+        this.newUrl.setLineWrap(true);
+        this.newUrl.setWrapStyleWord(true);
     }
 
     public JPanel getMainPanel() {

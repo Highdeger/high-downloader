@@ -56,6 +56,14 @@ public class Main {
     };
 
     public static void main(String[] args) {
+        // deploy database
+        try {
+            db = new DatabaseHelper("high.db");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.exit(6);
+        }
+
         executorService = Executors.newCachedThreadPool();
         modelLooksItems = HighUI.initUi();
 
@@ -85,14 +93,6 @@ public class Main {
 ////        test downloading
 //        start_download("https://dl2.soft98.ir/soft/i/Internet.Download.Manager.6.37.Build.14.Retail.Repack.zip?1591365814", 2);
 //        rebuilt_sections(new String[] {"file_section-0.high", "file_section-1.high"}, "file.rar");
-
-        // deploy database
-        try {
-            db = new DatabaseHelper("high.db");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.exit(6);
-        }
     }
 
     static void addToShowingWindow(Component c) {
