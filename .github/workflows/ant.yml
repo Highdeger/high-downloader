@@ -22,4 +22,4 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Build with Ant
-      run: ant -noinput -buildfile .github/workflows/ant.xml
+      run: ant -noinput -buildfile ant.xml
